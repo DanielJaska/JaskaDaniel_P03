@@ -20,6 +20,7 @@ public class LoseState : GameState
         StateMachine.Input.PressedCancel += OnPressedCancel;
         Debug.Log("Lose");
         _activated = true;
+        StateMachine.Input.PressedRight += OnPressedRight;
     }
 
     public override void Tick()
@@ -38,11 +39,16 @@ public class LoseState : GameState
         StateMachine.Input.PressedCancel -= OnPressedCancel;
         //_playerTurnTextUI.gameObject.SetActive(false);
         //StateMachine.Input.PressedConfirm -= OnPressedConfirm;
-
+        StateMachine.Input.PressedRight -= OnPressedRight;
         Debug.Log("Player Lose State Exiting...");
     }
 
     public void OnPressedCancel()
+    {
+        StateMachine.ChangeState<SetupGameState>();
+    }
+
+    public void OnPressedRight()
     {
         StateMachine.ChangeState<SetupGameState>();
     }

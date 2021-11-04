@@ -21,6 +21,7 @@ public class WinState : GameState
         StateMachine.Input.PressedCancel += OnPressedCancel;
         Debug.Log("Win");
         _activated = true;
+        StateMachine.Input.PressedRight += OnPressedRight;
     }
 
     public override void Tick()
@@ -40,9 +41,15 @@ public class WinState : GameState
         end_txt.gameObject.SetActive(false);
         Debug.Log("Player Win State Exiting...");
         _activated = false;
+        StateMachine.Input.PressedRight -= OnPressedRight;
     }
 
     public void OnPressedCancel()
+    {
+        StateMachine.ChangeState<SetupGameState>();
+    }
+
+    public void OnPressedRight()
     {
         StateMachine.ChangeState<SetupGameState>();
     }

@@ -6,7 +6,7 @@ public class PlayerTurnGameState : GameState
     [SerializeField] Text _playerTurnTextUI = null;
     [SerializeField] Button _playerAttackButtonUI = null;
 
-    int _playerTurnCount = 0;
+    public static int _playerTurnCount = 0;
 
     [SerializeField] Entity target;
 
@@ -19,6 +19,7 @@ public class PlayerTurnGameState : GameState
         _playerTurnCount++;
         _playerTurnTextUI.text = "Player Turn: " + _playerTurnCount.ToString();
         StateMachine.Input.PressedCancel += OnPressedCancel;
+        StateMachine.Input.PressedRight += OnPressedRight;
     }
 
     public override void Exit()
@@ -26,6 +27,7 @@ public class PlayerTurnGameState : GameState
         _playerTurnTextUI.gameObject.SetActive(false);
         _playerAttackButtonUI.gameObject.SetActive(false);
         StateMachine.Input.PressedCancel -= OnPressedCancel;
+        StateMachine.Input.PressedRight -= OnPressedRight;
 
         Debug.Log("Player Turn Exiting...");
     }
@@ -40,8 +42,13 @@ public class PlayerTurnGameState : GameState
        
     }
 
-    public void OnPressedCancel()
+    public void OnPressedRight()
     {
         StateMachine.ChangeState<SetupGameState>();
+    }
+
+    public void OnPressedCancel()
+    {
+        Application.Quit();
     }
 }

@@ -17,7 +17,7 @@ public class SetupGameState : GameState
         Debug.Log("Setup: ...Entering");
         Debug.Log("Creating" + _numberOfPlayers + " players.");
         Debug.Log("Creating starting value " + _startingValue + " value.");
-
+        PlayerTurnGameState._playerTurnCount = 0;
         foreach(Entity entity in entities)
         {
             entity.currentHealth = _startingValue;
