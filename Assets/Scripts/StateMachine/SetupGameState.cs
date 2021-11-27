@@ -21,7 +21,7 @@ public class SetupGameState : GameState
         foreach(Entity entity in entities)
         {
             entity.currentHealth = _startingValue;
-            entity.healthText.text = _startingValue.ToString();
+            entity.UpdateHealth();
         }
 
         //StateMachine.ChangeState<PlayerTurnGameState>();

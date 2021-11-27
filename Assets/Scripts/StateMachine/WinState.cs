@@ -18,10 +18,10 @@ public class WinState : GameState
         //_playerTurnCount++;
         //_playerTurnTextUI.text = "Player Turn: " + _playerTurnCount.ToString();
         //StateMachine.Input.PressedConfirm += OnPressedConfirm;
-        StateMachine.Input.PressedCancel += OnPressedCancel;
+        //StateMachine.Input.PressedCancel += OnPressedCancel;
         Debug.Log("Win");
         _activated = true;
-        StateMachine.Input.PressedRight += OnPressedRight;
+        //StateMachine.Input.PressedRight += OnPressedRight;
     }
 
     public override void Tick()
@@ -37,20 +37,20 @@ public class WinState : GameState
     {
         //_playerTurnTextUI.gameObject.SetActive(false);
         //StateMachine.Input.PressedConfirm -= OnPressedConfirm;
-        StateMachine.Input.PressedCancel -= OnPressedCancel;
-        end_txt.gameObject.SetActive(false);
-        Debug.Log("Player Win State Exiting...");
-        _activated = false;
-        StateMachine.Input.PressedRight -= OnPressedRight;
+        //StateMachine.Input.PressedCancel -= OnPressedCancel;
+        //end_txt.gameObject.SetActive(false);
+        //Debug.Log("Player Win State Exiting...");
+        //_activated = false;
+        //StateMachine.Input.PressedRight -= OnPressedRight;
     }
 
-    public void OnPressedCancel()
-    {
-        StateMachine.ChangeState<SetupGameState>();
-    }
+    //public void OnPressedCancel()
+    //{
+    //    StateMachine.ChangeState<SetupGameState>();
+    //}
 
-    public void OnPressedRight()
-    {
-        StateMachine.ChangeState<SetupGameState>();
-    }
+    //public void OnPressedRight()
+    //{
+    //    StateMachine.ChangeState<SetupGameState>();
+    //}
 }

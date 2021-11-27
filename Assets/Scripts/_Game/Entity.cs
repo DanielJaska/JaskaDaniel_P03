@@ -5,30 +5,23 @@ using UnityEngine.UI;
 
 public class Entity : MonoBehaviour
 {
+    [SerializeField] int _maxHealth = 10;
     public int currentHealth = 10;
 
-    public bool isPlayer = false;
-
-    [SerializeField] StateMachine stateMachine;
+    [SerializeField] protected StateMachine stateMachine;
     public Text healthText;
-    
 
-    public void TakeDamage(int value)
+
+    public virtual void TakeDamage(int value)
     {
         currentHealth = Mathf.Clamp(currentHealth - value, 0, 10);
-        
-        healthText.text = currentHealth.ToString();
-        
 
-        if (currentHealth <= 0)
-        {
-            if (isPlayer == true)
-            {
-                stateMachine.ChangeState<LoseState>();
-            } else
-            {
-                stateMachine.ChangeState<WinState>();
-            }
-        }
+        UpdateHealth();
+        
+    }
+
+    public virtual void UpdateHealth()
+    {
+        healthText.text = currentHealth.ToString() + "/" + _maxHealth.ToString();
     }
 }

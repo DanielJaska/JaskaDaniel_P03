@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 
 public class EnemyTurnState : GameState
 {
+    [SerializeField] Text _State_txt;
     public static event Action EnemyTurnBegan;
     public static event Action EnemyTurnEnded;
 
@@ -13,6 +15,7 @@ public class EnemyTurnState : GameState
 
     public override void Enter()
     {
+        _State_txt.text = "Enemy Turn";
         Debug.Log("Enemy Turn: ...Enter");
         EnemyTurnBegan?.Invoke();
 
