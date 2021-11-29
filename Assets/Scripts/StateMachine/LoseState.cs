@@ -19,7 +19,7 @@ public class LoseState : GameState
         //StateMachine.Input.PressedConfirm += OnPressedConfirm;
         //StateMachine.Input.PressedCancel += OnPressedCancel;
         Debug.Log("Lose");
-        _activated = true;
+        //_activated = true;
         //StateMachine.Input.PressedRight += OnPressedRight;
     }
 

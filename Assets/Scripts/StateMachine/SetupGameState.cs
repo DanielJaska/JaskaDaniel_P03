@@ -20,7 +20,7 @@ public class SetupGameState : GameState
         PlayerTurnGameState._playerTurnCount = 0;
         foreach(Entity entity in entities)
         {
-            entity.currentHealth = _startingValue;
+            //entity.currentHealth = _startingValue;
             entity.UpdateHealth();
         }
 

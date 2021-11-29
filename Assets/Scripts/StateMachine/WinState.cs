@@ -20,7 +20,7 @@ public class WinState : GameState
         //StateMachine.Input.PressedConfirm += OnPressedConfirm;
         //StateMachine.Input.PressedCancel += OnPressedCancel;
         Debug.Log("Win");
-        _activated = true;
+        //_activated = true;
         //StateMachine.Input.PressedRight += OnPressedRight;
     }
 

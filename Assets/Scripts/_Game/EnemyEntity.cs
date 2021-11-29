@@ -17,8 +17,6 @@ public class EnemyEntity : Entity
         }
     }
 
-
-
     IEnumerator timer()
     {
         yield return new WaitForSeconds(1f);

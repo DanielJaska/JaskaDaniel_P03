@@ -14,10 +14,16 @@ public class Entity : MonoBehaviour
 
     public virtual void TakeDamage(int value)
     {
-        currentHealth = Mathf.Clamp(currentHealth - value, 0, 10);
+        currentHealth = Mathf.Clamp(currentHealth - value, 0, _maxHealth);
 
         UpdateHealth();
         
+    }
+
+    public void Heal(int value)
+    {
+        TakeDamage(value);
+        stateMachine.ChangeState<EnemyTurnState>();
     }
 
     public virtual void UpdateHealth()
