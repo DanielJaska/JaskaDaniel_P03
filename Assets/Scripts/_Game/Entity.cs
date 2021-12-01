@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Entity : MonoBehaviour
 {
+    [SerializeField] protected Image image;
+
     [SerializeField] int _maxHealth = 10;
     public int currentHealth = 10;
 
@@ -15,7 +17,6 @@ public class Entity : MonoBehaviour
     public virtual void TakeDamage(int value)
     {
         currentHealth = Mathf.Clamp(currentHealth - value, 0, _maxHealth);
-
         UpdateHealth();
         
     }
@@ -30,4 +31,6 @@ public class Entity : MonoBehaviour
     {
         healthText.text = currentHealth.ToString() + "/" + _maxHealth.ToString();
     }
+
+    
 }

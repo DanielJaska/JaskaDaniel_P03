@@ -8,6 +8,8 @@ public class AttackState : EntityState
     [SerializeField] Text _stateTextUI = null;
     [SerializeField] Entity _target = null;
 
+    [SerializeField] AudioClip audioClip = null;
+
     public override void Enter()
     {
         Debug.Log("Player Attacks");
@@ -15,6 +17,7 @@ public class AttackState : EntityState
         //StateMachine.ChangeState<PlayerTurnGameState>();
         //_activated = true;
         _target.TakeDamage(Random.Range(1, 4));
+        AudioHelper.PlayClip2D(audioClip, 1f);
     }
 
     public override void Tick()

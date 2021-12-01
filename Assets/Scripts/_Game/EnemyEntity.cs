@@ -19,7 +19,12 @@ public class EnemyEntity : Entity
 
     IEnumerator timer()
     {
-        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            image.enabled = !image.enabled;
+        }
+        image.enabled = true;
         stateMachine.ChangeState<EnemyTurnState>();
     }
 }

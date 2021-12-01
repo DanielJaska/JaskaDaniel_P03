@@ -8,6 +8,8 @@ public class HealState : EntityState
     [SerializeField] Text _stateTextUI = null;
     [SerializeField] Entity _target = null;
 
+    [SerializeField] AudioClip audioClip;
+
     public override void Enter()
     {
         PlayerEntity.skillPoints -= 2;
@@ -16,6 +18,7 @@ public class HealState : EntityState
         //StateMachine.ChangeState<PlayerTurnGameState>();
         //_activated = true;
         _target.Heal(-5);
+        AudioHelper.PlayClip2D(audioClip, 1f);
     }
 
     public override void Tick()

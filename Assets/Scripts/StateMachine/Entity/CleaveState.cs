@@ -8,6 +8,8 @@ public class CleaveState : EntityState
     [SerializeField] Text _stateTextUI = null;
     [SerializeField] Entity _target = null;
 
+    [SerializeField] AudioClip audioClip = null;
+
     public override void Enter()
     {
         PlayerEntity.skillPoints -= 4;
@@ -15,6 +17,7 @@ public class CleaveState : EntityState
         _stateTextUI.text = "Player Attacks";
         //StateMachine.ChangeState<PlayerTurnGameState>();
         //_activated = true;
+        AudioHelper.PlayClip2D(audioClip, 1f);
         _target.TakeDamage(Random.Range(5, 8));
     }
 

@@ -7,10 +7,12 @@ public class PlayerEntity : Entity
 {
     public static int skillPoints = 0;
     [SerializeField] Text spText = null;
+    [SerializeField] AudioClip audioClip;
 
     public override void TakeDamage(int value)
     {
         base.TakeDamage(value);
+        AudioHelper.PlayClip2D(audioClip, 1f);
         if (currentHealth <= 0)
         {
             stateMachine.ChangeState<LoseState>();
@@ -34,7 +36,12 @@ public class PlayerEntity : Entity
 
     IEnumerator timer()
     {
-        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < 5; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            image.enabled = !image.enabled;
+        }
+        image.enabled = true;
         stateMachine.ChangeState<PlayerTurnGameState>();
     }
 }

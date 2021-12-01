@@ -584,8 +584,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1207,12 +1207,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d440c264c577a84b890e890f34632ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1271572234}
   _maxHealth: 25
   currentHealth: 25
   stateMachine: {fileID: 70299371}
   healthText: {fileID: 487708133}
-  skillPoints: -1
   spText: {fileID: 2109455645}
+  audioClip: {fileID: 8300000, guid: 0c4b5e737c5e5e044955d4cb9ee90e02, type: 3}
 --- !u!1 &847483472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce344d996cdd2d4484a10a138b2a29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 900034243}
   _maxHealth: 50
   currentHealth: 50
   stateMachine: {fileID: 70299371}
@@ -1643,10 +1645,10 @@ RectTransform:
   m_Father: {fileID: 1701506202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 309}
-  m_SizeDelta: {x: -800, y: -630}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -35.5}
+  m_SizeDelta: {x: 424, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124308157
 MonoBehaviour:
@@ -2040,7 +2042,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SP: 4 Cleave'
+  m_Text: SP:4 Cleave
 --- !u!222 &1434983967
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2524,9 +2526,9 @@ RectTransform:
   m_Father: {fileID: 1701506202}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -512, y: 309}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -35}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788194745
@@ -2817,6 +2819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateTextUI: {fileID: 1124308157}
   _target: {fileID: 1079858166}
+  audioClip: {fileID: 8300000, guid: 0c4b5e737c5e5e044955d4cb9ee90e02, type: 3}
 --- !u!114 &2040364318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2831,6 +2834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateTextUI: {fileID: 1124308157}
   _target: {fileID: 1079858166}
+  audioClip: {fileID: 8300000, guid: 24fdab74ac6df974f97a4a5634904e7e, type: 3}
 --- !u!114 &2040364319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2845,6 +2849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateTextUI: {fileID: 1124308157}
   _target: {fileID: 785444466}
+  audioClip: {fileID: 8300000, guid: 9a463fc8bc98a3248bd719f004e57686, type: 3}
 --- !u!1 &2109455644
 GameObject:
   m_ObjectHideFlags: 0
